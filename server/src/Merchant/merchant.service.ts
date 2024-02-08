@@ -14,15 +14,22 @@ export class MerchantService {
     static async getPincode(body: string): Promise<any> {
         const myDataSource = AppSataSource;
         const userRepository = myDataSource.getRepository(PinCodes);
-        const pincode = userRepository.findOne({ 
+        const pincode =await userRepository.findOne({ 
             relations: ["merchants"],
             where: { pincode: body } 
         })
-        return pincode;
+        let data=[];
+        if(pincode?.merchants)
+            for(const element of pincode?.merchants)
+            {
+                data.push(element.merchant);
+            }
+        return data;
     }
 
     static async initDataStruct():Promise<any>{
         const myDataSource = AppSataSource;
+        console.log('Initializing Data Structure........')
         const userRepository = myDataSource.getRepository(PinCodes);
         const pincode = await userRepository.find({
             relations: ["merchants"]

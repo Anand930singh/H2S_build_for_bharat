@@ -39,40 +39,29 @@ app.get('/getPincode', async(req,res)=>{
   res.json(data);
 })
 
-
-
-app.get('/initDataStructure',async(req,res)=>{
-  console.log('hii');
-  const data = await MerchantService.initDataStruct();
-  res.json(data);
-})
-
-app.get('/getDataStructure', async(req,res)=>{
-  const data= await MerchantService.getDataStructure();
-  console.log(data)
-  res.send(data)
-})
-
-app.get('/initMerchTab',async(req,res)=>{
-  const data = await MerchantService.initMerch();
-  res.json(data);
-})
-
-
 //final
 app.post('/merchantAvail', async(req,res)=>{
   const pin= req.body.pincode;
   if(pincodeMap.size===0)
   {
-    await MerchantService.initDataStruct();
+    MerchantService.initDataStruct();
+    const data= await MerchantService.getPincode(pin)
+    if (data.length!==0) {
+      res.json(data);
+    } else {
+      res.status(404).json({ error: 'Pincode not found' });
+    }
   }
-  const mp= pincodeMap.get(pin);
+  else{
+    const mp= pincodeMap.get(pin);
   if (mp) {
     const mpArray = Array.from(mp);
     res.json(mpArray);
   } else {
     res.status(404).json({ error: 'Pincode not found' });
   }
+  }
+  
 })
 
 app.post('/addMerchant',async(req,res)=>{
