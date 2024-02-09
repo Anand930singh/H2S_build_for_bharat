@@ -85,9 +85,9 @@ async function connectDB() {
 
 app.listen(PORT, async () => {
   await connectDB();
-  if(pincodeMap.size===0)
-  {
-    await MerchantService.initDataStruct();
-  }
+  // if(pincodeMap.size===0)
+  // {
+  //   await MerchantService.initDataStruct();
+  // }
   console.log(`Application running on ${PORT}`);
 });
