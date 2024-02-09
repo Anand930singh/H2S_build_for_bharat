@@ -49,12 +49,12 @@ export default function Tab() {
     setMerch([]);
     const respose = await fetch('https://buildforbharat2.onrender.com/merchantAvail', {
       method: 'POST',
-      mode: 'no-cors',
       body: JSON.stringify({
         pincode: pin
       }),
       headers: { 'Content-type': 'application/json' }
     })
+
     const json = await respose.json();
     if (json.error)
       setWarn(json.error)
