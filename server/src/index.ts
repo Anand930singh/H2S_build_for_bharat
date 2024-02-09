@@ -5,7 +5,8 @@ import cors from "cors";
 import { PinCodes } from "./entities/pincode";
 import { MerchantService } from "./Merchant/merchant.service";
 import { pincodeMap } from "./DataStruct";
-
+import dotenv from 'dotenv';
+dotenv.config();
 const app = express();
 const PORT = 5050;
 
@@ -14,11 +15,11 @@ app.use(cors());
 
 export const AppSataSource = new DataSource({
   type: "postgres",
-  host: "ep-lively-fog-a58gh9b4.us-east-2.aws.neon.tech",
+  host: process.env.DBHOST,
   port: 5432,
   username: "anand2002ksingh",
-  password: "1PZiCSGWlEw7",
-  database: "buildBharat",
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
   ssl: {
     rejectUnauthorized: false,
   },
