@@ -11,9 +11,9 @@ const app = express();
 const PORT = 5050;
 
 app.use(express.json());
-app.use(cors({
-  origin: 'http://localhost:5173'
-}));
+// app.use(cors({
+//   origin: 'http://localhost:5173'
+// }));
 
 export const AppSataSource = new DataSource({
   type: "postgres",
