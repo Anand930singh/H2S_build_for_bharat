@@ -76,6 +76,12 @@ app.get('/getAllPins', async(req,res)=>{
   res.json(data)
 })
 
+app.post('/getDataBase', async(req,res)=>{
+  const offset= req.body.offset;
+  const data= await MerchantService.getDatabase(offset);
+  res.json(data);
+})
+
 async function connectDB() {
   await AppSataSource.initialize()
     .then(() => {

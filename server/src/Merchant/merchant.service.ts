@@ -27,6 +27,17 @@ export class MerchantService {
         return data;
     }
 
+    static async getDatabase(offset:number):Promise<any>{
+        const myDataSource = AppSataSource;
+        const userRepository =myDataSource.getRepository(PinCodes)
+        const pincode = await userRepository.find({
+            relations: ["merchants"],
+            take: 20, 
+            skip: offset*20, 
+          });
+        return pincode;
+    }
+
     static async initDataStruct():Promise<any>{
         const myDataSource = AppSataSource;
         console.log('Initializing Data Structure........')
