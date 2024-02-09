@@ -27,7 +27,7 @@ export default function Tab() {
     console.log("Merchant ID:", merchantID);
     console.log("Pin Codes:", pinCodesArray);
   
-    const response = await fetch('http://localhost:5050/addMerchant',{
+    const response = await fetch('https://buildforbharat2.onrender.com/addMerchant',{
       method:'POST',
       body: JSON.stringify({
         merchantId:merchantID,
@@ -46,7 +46,7 @@ export default function Tab() {
   const getMerch = async (e: any) => {
     e.preventDefault();
     setMerch([]);
-    const respose = await fetch('http://localhost:5050/merchantAvail', {
+    const respose = await fetch('https://buildforbharat2.onrender.com/merchantAvail', {
       method: 'POST',
       body: JSON.stringify({
         pincode: pin
