@@ -81,7 +81,6 @@ export class MerchantService {
     }
 
     static async addMerchants(body: any):Promise<any> {
-
         try{
         const myDataSource = AppSataSource;
         const userRepository = myDataSource.getRepository(PinCodes);
@@ -109,8 +108,8 @@ export class MerchantService {
                 data.push(savedMerch);
             }
         }
-        await this.initDataStruct();
-        console.log(data);
+        // await this.initDataStruct();
+        // console.log(data);
         return data;
     }catch(e){
         return {error: 'Already exist'}
