@@ -29,7 +29,6 @@ export default function Tab() {
   
     const response = await fetch('https://buildforbharat2.onrender.com/addMerchant',{
       method:'POST',
-      mode: 'no-cors',
       body: JSON.stringify({
         merchantId:merchantID,
         deliveryPin:pinCodesArray

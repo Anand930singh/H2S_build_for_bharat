@@ -66,6 +66,7 @@ app.post('/merchantAvail', async(req,res)=>{
 })
 
 app.post('/addMerchant',async(req,res)=>{
+  console.log('fu')
   const body=req.body;
   const data = await MerchantService.addMerchants(body);
   res.json(data);

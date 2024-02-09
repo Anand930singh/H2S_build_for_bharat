@@ -108,8 +108,6 @@ export class MerchantService {
                 data.push(savedMerch);
             }
         }
-        // await this.initDataStruct();
-        // console.log(data);
         return data;
     }catch(e){
         return {error: 'Already exist'}
