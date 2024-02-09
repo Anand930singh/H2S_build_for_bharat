@@ -24,7 +24,7 @@ export const AppSataSource = new DataSource({
     rejectUnauthorized: false,
   },
   entities: ["src/entities/*{.ts,.js}"],
-  synchronize: true,
+  synchronize: false,
   logging: true,
 });
 
@@ -45,7 +45,7 @@ app.post('/merchantAvail', async(req,res)=>{
   const pin= req.body.pincode;
   if(pincodeMap.size===0)
   {
-    MerchantService.initDataStruct();
+    // MerchantService.initDataStruct();
     const data= await MerchantService.getPincode(pin)
     if (data.length!==0) {
       res.json(data);

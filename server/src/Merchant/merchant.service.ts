@@ -40,7 +40,7 @@ export class MerchantService {
 
     static async initDataStruct():Promise<any>{
         const myDataSource = AppSataSource;
-        console.log('Initializing Data Structure........')
+        // console.log('Initializing Data Structure........')
         const userRepository = myDataSource.getRepository(PinCodes);
         const pincode = await userRepository.find({
             relations: ["merchants"]

@@ -29,6 +29,7 @@ export default function Tab() {
   
     const response = await fetch('https://buildforbharat2.onrender.com/addMerchant',{
       method:'POST',
+      mode: 'no-cors',
       body: JSON.stringify({
         merchantId:merchantID,
         deliveryPin:pinCodesArray
@@ -48,6 +49,7 @@ export default function Tab() {
     setMerch([]);
     const respose = await fetch('https://buildforbharat2.onrender.com/merchantAvail', {
       method: 'POST',
+      mode: 'no-cors',
       body: JSON.stringify({
         pincode: pin
       }),
