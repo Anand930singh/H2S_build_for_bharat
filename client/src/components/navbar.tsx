@@ -11,10 +11,10 @@ export default function Navbar() {
         alt="logo"
       />
       <div className="flex gap-4">
-        <DrawerTrigger asChild>
+        {/* <DrawerTrigger asChild>
           <Button variant="outline">Open Drawer</Button>
-        </DrawerTrigger>
-        <ModeToggle />z
+        </DrawerTrigger> */}
+        <ModeToggle />
         <div className="text-3xl text-blue-500 font-bold">Build For Bharat</div>
       </div>
     </div>
