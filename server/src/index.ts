@@ -15,11 +15,11 @@ app.use(cors());
 
 export const AppSataSource = new DataSource({
   type: "postgres",
-  host: process.env.DBHOST,
+  host: 'ep-lively-fog-a58gh9b4.us-east-2.aws.neon.tech',
   port: 5432,
   username: "anand2002ksingh",
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE,
+  password:'1PZiCSGWlEw7',
+  database: 'buildBharat',
   ssl: {
     rejectUnauthorized: false,
   },

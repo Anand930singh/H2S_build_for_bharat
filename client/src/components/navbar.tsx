@@ -14,7 +14,7 @@ export default function Navbar() {
         <DrawerTrigger asChild>
           <Button variant="outline">Open Drawer</Button>
         </DrawerTrigger>
-        <ModeToggle />
+        <ModeToggle />z
         <div className="text-3xl text-blue-500 font-bold">Build For Bharat</div>
       </div>
     </div>
