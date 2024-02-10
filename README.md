@@ -1,3 +1,5 @@
+# ```Optimal storage & retrieval in m*n sparse matrix```
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Build for Bharat Hackathon Project
 
 This project was developed for the Build for Bharat Hackathon. It consists of a client-side and a server-side component.
