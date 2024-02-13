@@ -96,6 +96,9 @@ export default function Tab() {
                 </div>
               )}
             </div>
+            <div className="text-red-500 text-sm">
+            Note: Initial requests may experience delays due to the cold start of the backend server in the free tier. This issue does not occur in production.
+            </div>
           </CardContent>
         </Card>
       </TabsContent>

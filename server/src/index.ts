@@ -91,6 +91,13 @@ async function connectDB() {
     .catch((e) => console.log(e));
 }
 
+// const callApi=async()=>{
+//   console.log('Called api')
+//  const data= await MerchantService.getPincode('123456');
+// }
+
+// setInterval(callApi, 15*60*1000-1);
+
 app.listen(PORT, async () => {
   await connectDB();
   // if(pincodeMap.size===0)
