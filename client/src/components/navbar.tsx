@@ -1,6 +1,4 @@
 import { ModeToggle } from "./mode-toggle";
-import { DrawerTrigger } from "@/components/ui/drawer";
-import { Button } from "./ui/button";
 
 export default function Navbar() {
   return (
